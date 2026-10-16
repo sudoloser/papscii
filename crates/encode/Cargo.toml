@@ -1,0 +1,10 @@
+[package]
+name = "papscii-encode"
+description = "Video -> ASCII grids -> .pscii encoding pipeline"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+papscii-core.workspace = true
+thiserror.workspace = true

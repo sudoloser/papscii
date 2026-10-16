@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="4" width="120" height="120" rx="24" fill="#1e1f22"/>
+  <rect x="4" y="4" width="120" height="120" rx="24" fill="none" stroke="#4f46e5" stroke-width="3"/>
+  <g fill="#e6e8ec" font-family="monospace" font-size="26" font-weight="bold" text-anchor="middle">
+    <text x="34" y="52">@</text>
+    <text x="64" y="52">:</text>
+    <text x="94" y="52">.</text>
+    <text x="34" y="82">+</text>
+    <text x="64" y="82">#</text>
+    <text x="94" y="82">%</text>
+    <text x="34" y="112">.</text>
+    <text x="64" y="112">=</text>
+    <text x="94" y="112">*</text>
+  </g>
+</svg>

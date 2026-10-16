@@ -1,0 +1,15 @@
+[package]
+name = "papscii-cli"
+description = "User-facing papscii command line interface"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "papscii"
+path = "src/main.rs"
+
+[dependencies]
+papscii-core.workspace = true
+papscii-encode.workspace = true
+clap.workspace = true

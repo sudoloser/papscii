@@ -1,0 +1,23 @@
+[package]
+name = "papscii-gui"
+description = "Papscii desktop GUI (gallery + settings) built with egui_component"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "papscii-gui"
+path = "src/main.rs"
+
+[dependencies]
+papscii-core.workspace = true
+papscii-i18n.workspace = true
+papscii-encode.workspace = true
+
+# Pinned together: egui_component alpha.2 and egui-phosphor 0.12 both target egui 0.34.
+eframe = "0.34"
+egui_component = "=0.1.0-alpha.2"
+egui-phosphor = "0.12"
+
+# Native file dialogs. Defaults to the XDG Desktop Portal backend on Linux/Wayland.
+rfd = "0.17"

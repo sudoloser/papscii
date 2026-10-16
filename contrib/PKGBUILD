@@ -1,0 +1,29 @@
+# Maintainer: Papscii contributors
+pkgname=papscii
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Animated ASCII desktop wallpapers (encoder, daemon, CLI and GUI)"
+arch=('x86_64')
+url="https://github.com/sudoloser/papscii"
+license=('MIT')
+depends=('ffmpeg' 'wayland' 'libxkbcommon' 'fontconfig' 'glibc')
+makedepends=('cargo' 'git')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release --workspace
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+
+  install -Dm755 target/release/papscii          "$pkgdir/usr/bin/papscii"
+  install -Dm755 target/release/papscii-daemon   "$pkgdir/usr/bin/papscii-daemon"
+  install -Dm755 target/release/papscii-gui      "$pkgdir/usr/bin/papscii-gui"
+
+  install -Dm644 contrib/papscii.desktop         "$pkgdir/usr/share/applications/papscii.desktop"
+  install -Dm644 assets/icons/papscii.svg        "$pkgdir/usr/share/icons/hicolor/scalable/apps/papscii.svg"
+  install -Dm644 contrib/papscii-daemon.service  "$pkgdir/usr/lib/systemd/user/papscii-daemon.service"
+}

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Papscii
+GenericName=ASCII Wallpaper Manager
+Comment=Create and apply animated ASCII desktop wallpapers
+Exec=papscii-gui
+TryExec=papscii-gui
+Icon=papscii
+Terminal=false
+Categories=Graphics;
+Keywords=ascii;wallpaper;animated;terminal;
+StartupNotify=true

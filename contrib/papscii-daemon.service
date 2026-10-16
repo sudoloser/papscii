@@ -1,0 +1,24 @@
+[Unit]
+Description=Papscii animated ASCII wallpaper daemon
+Documentation=man:papscii-daemon(1)
+After=graphical-session.target
+PartOf=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/papscii-daemon
+Restart=on-failure
+RestartSec=2
+
+# The daemon needs to reach the compositor. In a systemd-managed graphical
+# session these are usually already imported; uncomment and adjust if not.
+# Environment=WAYLAND_DISPLAY=wayland-1
+# Environment=DISPLAY=:1
+
+# Layer to render on: "background" (default), "bottom", or "top".
+# Use "bottom" to sit above another background daemon (e.g. an animated rice).
+Environment=PAPSCII_LAYER=background
+
+[Install]
+WantedBy=default.target

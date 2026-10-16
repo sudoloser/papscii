@@ -1,0 +1,31 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/core",
+    "crates/i18n",
+    "crates/encode",
+    "crates/daemon",
+    "crates/cli",
+    "crates/gui",
+]
+default-members = ["crates/core", "crates/i18n"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Papscii contributors"]
+
+[workspace.dependencies]
+# internal
+papscii-core = { path = "crates/core" }
+papscii-i18n = { path = "crates/i18n" }
+papscii-encode = { path = "crates/encode" }
+papscii-daemon = { path = "crates/daemon" }
+
+# shared third-party
+serde = { version = "1", features = ["derive"] }
+bincode = "1"
+thiserror = "2"
+lz4_flex = "0.11"
+clap = { version = "4", features = ["derive"] }

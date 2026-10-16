@@ -1,0 +1,10 @@
+[package]
+name = "papscii-i18n"
+description = "Localization (Fluent) for Papscii. All UI text lives here, keyed like Android string resources."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+fluent = "0.17"
+unic-langid = "0.9"

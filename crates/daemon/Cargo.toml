@@ -1,0 +1,20 @@
+[package]
+name = "papscii-daemon"
+description = "Background renderer that draws animated ASCII wallpapers on the desktop layer"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "papscii-daemon"
+path = "src/main.rs"
+
+[dependencies]
+papscii-core.workspace = true
+
+smithay-client-toolkit = { version = "0.21", features = ["calloop"] }
+wayland-client = "0.31"
+calloop = "0.14"
+calloop-wayland-source = "0.4"
+fontdue = "0.9"
+thiserror.workspace = true
